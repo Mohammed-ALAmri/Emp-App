@@ -1,0 +1,18 @@
+.container{
+    padding: 5% 20%;
+    text-align:center;
+}
+
+.card{
+    padding : 5% 10%;
+    background-color: #dedede;
+    box-shadow: 0 3px #4dffff ;
+}
+
+input{
+    background-color: #f0efef;
+}
+
+h3{
+    padding-bottom: 5%;
+}

@@ -1,0 +1,11 @@
+.jumbotron{
+    margin-top: 10%;
+    background-color: #343a40;
+    color: aliceblue;
+    box-shadow: 0 3px #4dffff ;
+}
+
+.link {
+    display: inline;
+    color: aqua;
+}
