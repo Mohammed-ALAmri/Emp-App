@@ -4,7 +4,10 @@
 }
 
 table{
-    box-shadow: 0 3px #4dffff ;
+    box-shadow: 0 3px #040959 ;
+    background-color: #F2F2F2;
+    color: #0D0D0D;
+    border: 1px solid black;
 }
 
 .search {
@@ -26,6 +29,10 @@ table{
 td{
     width: 20%;
     vertical-align: middle;
+}
+
+.tr:hover{
+    background-color: #040959 !important
 }
 
 .tdId{
