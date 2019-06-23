@@ -1,8 +1,9 @@
 nav {
-    box-shadow: 0 3px #4dffff ;
+    box-shadow: 0 3px #040959 ;
+    background-color: #F2F2F2;
 }
 a {
-    color: aliceblue;
+    color: black;
 }
 .a4 {
     position: absolute; 
