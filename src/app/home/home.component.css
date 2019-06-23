@@ -1,13 +1,14 @@
 .jumbotron{
     margin-top: 10%;
-    background-color: #343a40;
-    color: aliceblue;
-    box-shadow: 0 3px #4dffff ;
+    background-color: #F2F2F2;
+    color: #0D0D0D;
+    box-shadow: 0 3px #040959 ;
 }
 
 .link {
     display: inline;
-    color: aqua;
+    color: #040959;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 800px) {
