@@ -1,4 +1,17 @@
 <navbar></navbar>
+<form>
+  <div class="container con">
+    <table class="table table-hover table-dark">
+      <tr>
+        <td scope="row"><input type="text" class="form-control" placeholder="Enter id"></td>
+        <td scope="row"><input type="text" class="form-control" placeholder="Enter Name"></td>
+        <td scope="row"><input type="text" class="form-control" placeholder="Enter Salary"></td>
+        <td class="tdd"><button class="btn btn-outline-success my-2 my-sm-0 btnn" type="submit">Add</button></td>
+      </tr>
+    </table>
+  </div>
+</form>
+
 <div class="container">
   <table class="table table-hover table-dark">
     <thead>
@@ -10,22 +23,30 @@
           </form>
         </td>
       </tr>
+
       <tr>
         <th class="tdId" scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Salary</th>
-        <th scope="col">Add to list</th>
+        <!-- <th scope="col">Add to list</th> -->
         <th scope="col">Delete from list</th>
       </tr>
     </thead>
     <tbody>
       
-      <tr *ngFor='let employee of employees' class="tr">
+      <tr *ngFor='let employee of pageOfItems' class="tr">
         <th class="tdId" scope="row">{{employee.id}}</th>
         <td>{{employee.employee_name}}</td>
         <td>{{employee.employee_salary}}</td>
-        <td class="tdd"><button class="btn btn-outline-success my-2 my-sm-0 btnn" type="submit">Add</button></td>
-        <td class="tdd"><button class="btn btn-outline-danger my-2 my-sm-0 btnn" type="submit">Delete</button></td>
+        <td class="tdd"><button class="btn btn-outline-danger my-2 my-sm-0 btnn" type="submit" (click)="deleteEmp(employee.id)">Delete</button></td>
+      </tr>
+
+      <tr class="pagination1">
+        <td colspan="5">    
+          <div class="card-footer pb-0 pt-3 ccc">
+              <jw-pagination [items]="employees" (changePage)="onChangePage($event)"></jw-pagination>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
