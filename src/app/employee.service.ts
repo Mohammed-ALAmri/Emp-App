@@ -13,4 +13,8 @@ export class EmployeeService {
   listEmp(): Observable <Employee[]>{
     return this.http.get<Employee[]>("http://dummy.restapiexample.com/api/v1/employees")
   }
+
+  deleteEmp(id): Observable <Employee[]>{
+    return this.http.delete<Employee[]>(`http://dummy.restapiexample.com/api/v1/${id}`)
+  }
 }
