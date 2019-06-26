@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { JwPaginationComponent } from 'jw-angular-pagination';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     HomeComponent,
     PageNotFoundComponent,
-    ListComponent
+    ListComponent,  
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,
