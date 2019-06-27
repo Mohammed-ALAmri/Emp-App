@@ -36,8 +36,8 @@
       
       <tr *ngFor='let employee of pageOfItems' class="tr">
         <th class="tdId" scope="row">{{employee.id}}</th>
-        <td>{{employee.employee_name}}</td>
-        <td>{{employee.employee_salary}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.salary}}</td>
         <td class="tdd"><button class="btn btn-outline-danger my-2 my-sm-0 btnn" type="submit" (click)="deleteEmp(employee.id)">Delete</button></td>
       </tr>
 
