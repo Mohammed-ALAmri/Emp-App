@@ -7,14 +7,18 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-
+  url = "http://localhost:5555/employees"
   constructor(private http: HttpClient) { }
 
   listEmp(): Observable <Employee[]>{
-    return this.http.get<Employee[]>("http://localhost:5555/employees")
+    return this.http.get<Employee[]>(this.url);
   }
 
-  deleteEmp(id): Observable <Employee>{
-    return this.http.delete<Employee>(`http://localhost:5555/employees`)
+  addEmp(newEmployee: object){
+    this.http.post(this.url, newEmployee).subscribe();
+  }
+
+  searchEmp(id): Observable <Employee[]>{
+    return this.http.get<Employee[]>(this.url+`/${id}`);
   }
 }
