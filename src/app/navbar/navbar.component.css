@@ -20,6 +20,7 @@ a {
         bottom: 0;
         width: 100%;
         border-top: 3px solid #4dffff;
+        z-index: 2;
     }
     .a1 {
         font-size: 13px;
