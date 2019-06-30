@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JwPaginationComponent } from 'jw-angular-pagination';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
     HomeComponent,
     PageNotFoundComponent,
     ListComponent,  
-    JwPaginationComponent
+    JwPaginationComponent, AlertComponent
   ],
   imports: [
     BrowserModule,
