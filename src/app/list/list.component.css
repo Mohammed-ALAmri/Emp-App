@@ -9,7 +9,6 @@
     padding-top: 5% !important;
 }
 
-
 .table{
     box-shadow: 0 3px #040959 ;
     background-color: #F2F2F2;
@@ -46,7 +45,7 @@ td{
 }
 
 .ccc{
-    padding: 0% 20%;
+    padding-left: 20% ;    
 }
 
 .pagination1:hover{
