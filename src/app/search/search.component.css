@@ -52,10 +52,17 @@ select{
     width: 13%;
     margin: auto;
     margin-left: 1px;
+    border: #040959 solid 1px;
+    color: #040959;
 }
 
 .btnn{
     width: 50%;
+}
+
+.butn:hover{
+    background-color: #040959;
+    color: #F2F2F2;
 }
 
 td{
