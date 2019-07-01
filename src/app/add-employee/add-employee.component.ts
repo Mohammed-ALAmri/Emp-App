@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
+import { EmployeeService } from '../employee.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-add-employee',
@@ -8,7 +11,7 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService) {}
 
   addEmployeeForm = this.fb.group({
     id: ['', Validators.required],
@@ -29,6 +32,31 @@ export class AddEmployeeComponent implements OnInit {
     this.idp.push(this.fb.control(''));
     this.namep.push(this.fb.control(''));
     this.startp.push(this.fb.control(''));
+  }
+
+  onSubmit(){
+    let data = this.addEmployeeForm.value;
+    let isDev = false;
+    console.log(data)
+    if(data.dev == "true"){
+      isDev = true
+    }
+
+    let newEmp = {
+      id: data.id,
+      name: data.name,
+      salary: data.salary,
+      birthdate: data.birthdate,
+      isDev: data.dev,
+      projects: [
+        {
+          id: data.idp[0],
+          name: data.namep[0],
+          startDate: data.startp[0]
+        }
+      ]
+    }
+    this.employeeService.addEmp(newEmp);
   }
 
   get id(){
