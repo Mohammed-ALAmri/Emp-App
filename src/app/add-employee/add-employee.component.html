@@ -1,0 +1,39 @@
+<navbar></navbar>
+
+<form (submit)="addNewEmp($event)">
+  <div class="container con">
+    <table class="table table-hover table-dark">
+      <tr>
+          <th colspan="5">Employee Info</th>
+      </tr>
+      <tr>
+        <td scope="row"><input type="text" id="id" id="id" class="form-control" placeholder="Enter id"></td>
+        <td scope="row"><input type="text" id="name" id="name" class="form-control" placeholder="Enter Name"></td>
+        <td scope="row"><input type="text" id="salary" id="salary" class="form-control" placeholder="Enter Salary"></td>
+        <td scope="row"><select name="dev" id="dev">
+          <option value="" disabled selected>Select your option</option>
+          <option value="isDve" class="des">Developer</option>
+          <option value="notDev" class="des">Not Developer</option></select>
+        </td>
+        <td scope="row"><input type="text" id="birthdate" id="birthdate" class="form-control"  onfocus="(this.type='date')" placeholder="Enter birthdate"></td>
+      </tr>
+    </table>
+
+    <table class="table table-hover table-dark">
+        <tr>
+            <th colspan="3">Employee Projects <br><span class="badge badge-pill badge-warning">Add another Project</span></th>
+        </tr>
+        <tr>
+          <td scope="row"><input type="text" id="id" id="id" class="form-control" placeholder="Enter id"></td>
+          <td scope="row"><input type="text" id="name" id="name" class="form-control" placeholder="Enter Name"></td>
+          <td scope="row"><input type="text" id="start" id="start" class="form-control" onfocus="(this.type='date')" placeholder="Enter start date"></td>
+        </tr>
+      </table>
+
+      <table class="table table-hover table-dark">
+        <tr>
+          <td  colspan="5" class="tdd"><button class="btn btn-outline-success my-2 my-sm-0 btnn" type="submit">Add</button></td>
+        </tr>
+      </table>
+  </div>
+</form>
