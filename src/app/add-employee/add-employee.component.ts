@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-employee',
@@ -8,20 +8,53 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  addEmployeeForm = new FormGroup({
-    id: new FormControl(''),
-    name: new FormControl(''),
-    salary: new FormControl(''),
-    dev: new FormControl(''),
-    birthdate: new FormControl(''),
-    idp: new FormControl(''),
-    namep: new FormControl(''),
-    startp: new FormControl('')
+  constructor(private fb: FormBuilder) {}
+
+  addEmployeeForm = this.fb.group({
+    id: ['', Validators.required],
+    name: ['', Validators.required],
+    salary: ['', Validators.required],
+    dev: ['', Validators.required],
+    birthdate: ['', Validators.required],
+    idp: ['', Validators.required],
+    namep: ['', Validators.required],
+    startp:['', Validators.required]
   });
 
-  constructor() { }
-
   ngOnInit() {
+
+  }
+
+  get id(){
+    return this.addEmployeeForm.get('id');
+  }
+
+  get name(){
+    return this.addEmployeeForm.get('name');
+  }
+
+  get salary(){
+    return this.addEmployeeForm.get('salary');
+  }
+
+  get dev(){
+    return this.addEmployeeForm.get('dev');
+  }
+
+  get birthdate(){
+    return this.addEmployeeForm.get('birthdate');
+  }
+
+  get idp(){
+    return this.addEmployeeForm.get('idp');
+  }
+
+  get namep(){
+    return this.addEmployeeForm.get('namep');
+  }
+
+  get startp(){
+    return this.addEmployeeForm.get('startp');
   }
 
 }
