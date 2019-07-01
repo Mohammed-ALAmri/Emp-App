@@ -30,15 +30,15 @@
 
     <table class="table table-hover table-dark">
         <tr>
-            <th colspan="3">Employee Projects <br><span class="badge badge-pill badge-warning">Add another Project</span></th>
+            <th colspan="3">Employee Projects <br><span (click)='addProject()' class="badge badge-pill badge-warning">Add another Project</span></th>
         </tr>
-        <tr>
-          <td scope="row"><input [class.errr]='idp.invalid && idp.touched' formControlName="idp"  type="text" name="idp" id="idp" class="form-control" placeholder="Enter id">
-            <small [class.d-none]='idp.valid || idp.untouched' class="text-danger">Project id is required</small></td>
-          <td scope="row"><input [class.errr]='namep.invalid && namep.touched' formControlName="namep" type="text" name="namep" id="namep" class="form-control" placeholder="Enter Name">
-          <small [class.d-none]='namep.valid || namep.untouched' class="text-danger">Project name is required</small></td>
-          <td scope="row"><input [class.errr]='startp.invalid && startp.touched' formControlName="startp" type="text" name="startp" id="startp" class="form-control" onfocus="(this.type='date')" placeholder="Enter start date">
-          <small [class.d-none]='startp.valid || startp.untouched' class="text-danger">Start date is required</small></td>
+        <tr *ngFor="let idd of idp.controls; let i=index ; let na of namep.controls; let j=index ;  let st of startp.controls; let l=index" >
+          <td formArrayName="idp" scope="row"><input [formControlName] ='i' type="text" name="idp" id="idp" class="form-control" placeholder="Enter id">
+          </td>
+          <td formArrayName="namep" scope="row"><input [formControlName] ='j' type="text" name="namep" id="namep" class="form-control" placeholder="Enter Name">
+          </td>
+          <td formArrayName="startp" scope="row"><input [formControlName] ='l' type="text" name="startp" id="startp" class="form-control" onfocus="(this.type='date')" placeholder="Enter start date">
+          </td>
         </tr>
       </table>
 
