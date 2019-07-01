@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-add-employee',
@@ -16,13 +16,19 @@ export class AddEmployeeComponent implements OnInit {
     salary: ['', Validators.required],
     dev: ['', Validators.required],
     birthdate: ['', Validators.required],
-    idp: ['', Validators.required],
-    namep: ['', Validators.required],
-    startp:['', Validators.required]
+    idp: this.fb.array([''], Validators.required),
+    namep: this.fb.array(['']),
+    startp:this.fb.array([''])
   });
 
   ngOnInit() {
 
+  }
+
+  addProject(){
+    this.idp.push(this.fb.control(''));
+    this.namep.push(this.fb.control(''));
+    this.startp.push(this.fb.control(''));
   }
 
   get id(){
@@ -46,15 +52,14 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   get idp(){
-    return this.addEmployeeForm.get('idp');
+    return this.addEmployeeForm.get('idp') as FormArray;
   }
 
   get namep(){
-    return this.addEmployeeForm.get('namep');
+    return this.addEmployeeForm.get('namep') as FormArray;
   }
 
   get startp(){
-    return this.addEmployeeForm.get('startp');
+    return this.addEmployeeForm.get('startp') as FormArray;
   }
-
 }
