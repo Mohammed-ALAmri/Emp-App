@@ -11,6 +11,8 @@ import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JwPaginationComponent } from 'jw-angular-pagination';
 import { AlertComponent } from './alert/alert.component';
+import { SearchComponent } from './search/search.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { AlertComponent } from './alert/alert.component';
     HomeComponent,
     PageNotFoundComponent,
     ListComponent,  
-    JwPaginationComponent, AlertComponent
+    JwPaginationComponent, AlertComponent, SearchComponent, AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
