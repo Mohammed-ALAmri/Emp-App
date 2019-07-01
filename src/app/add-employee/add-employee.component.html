@@ -1,6 +1,6 @@
 <navbar></navbar>
 
-<form [formGroup]="addEmployeeForm">
+<form [formGroup]="addEmployeeForm" (ngSubmit)='onSubmit()'>
     <div class="container con">
     <table class="table table-hover table-dark">
       <tr>
@@ -18,8 +18,8 @@
         
         <td scope="row"><select [class.errr]='dev.invalid && dev.touched'  formControlName="dev" name="dev" id="dev">
           <option value="" disabled selected>Select your option</option>
-          <option value="isDve" class="des">Developer</option>
-          <option value="notDev" class="des">Not Developer</option></select>
+          <option value=true class="des">Developer</option>
+          <option value=false class="des">Not Developer</option></select>
         
         <small [class.d-none]='dev.valid || dev.untouched' class="text-danger">please choose one</small></td>
         
@@ -44,7 +44,7 @@
 
       <table class="table table-hover table-dark">
         <tr>
-          <td  colspan="5" class="tdd"><button class="btn btn-outline-success my-2 my-sm-0 btnn" type="submit">Add</button></td>
+          <td  colspan="5" class="tdd"><button class="btn btn-outline-success my-2 my-sm-0 btnn" name='submit' id='submit' type="submit">Add</button></td>
         </tr>
       </table>
   </div>
