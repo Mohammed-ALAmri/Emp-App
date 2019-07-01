@@ -16,7 +16,9 @@ h3{
 
 .btn{
     background: #040959;
-    border: #040959
+    border: #040959;
+    width: 100%;
+    margin-top: 3%;
 }
 
 input{
