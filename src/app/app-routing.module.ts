@@ -5,6 +5,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ListComponent } from './list/list.component';
+import { SearchComponent } from './search/search.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: "employeeList" ,
     component: ListComponent
+  },  
+  {
+    path: "addEmployee" ,
+    component: AddEmployeeComponent
+  },  
+  {
+    path: "searchEmployee" ,
+    component: SearchComponent
   },
   {
     path: "**" ,
