@@ -1,51 +1,60 @@
 <navbar></navbar>
 
-<form [formGroup]="addEmployeeForm" (ngSubmit)='onSubmit()'>
-    <div class="container con">
-    <table class="table table-hover table-dark">
-      <tr>
-          <th colspan="5">Employee Info</th>
-      </tr>
-      <tr>
-        <td scope="row"><input [class.errr]='id.invalid && id.touched' formControlName="id" type="number" name="id" id="id" class="form-control" placeholder="Enter id">
-        <small [class.d-none]='id.valid || id.untouched' class="text-danger">id is required</small></td>
-        
-        <td scope="row"><input [class.errr]='name.invalid && name.touched'  formControlName="name" type="text" name="name" id="name" class="form-control" placeholder="Enter Name">
-        <small [class.d-none]='name.valid || name.untouched' class="text-danger">name is required</small></td>
-        
-        <td scope="row"><input [class.errr]='salary.invalid && salary.touched'  formControlName="salary" type="text" name="salary" id="salary" class="form-control" placeholder="Enter Salary">
-        <small [class.d-none]='salary.valid || salary.untouched' class="text-danger"> salary is required</small></td>
-        
-        <td scope="row"><select [class.errr]='dev.invalid && dev.touched'  formControlName="dev" name="dev" id="dev">
-          <option value="" disabled selected>Select your option</option>
-          <option value=true class="des">Developer</option>
-          <option value=false class="des">Not Developer</option></select>
-        
-        <small [class.d-none]='dev.valid || dev.untouched' class="text-danger">please choose one</small></td>
-        
-        <td scope="row"><input [class.errr]='birthdate.invalid && birthdate.touched'  formControlName="birthdate" type="text" name="birthdate" id="birthdate" class="form-control"  onfocus="(this.type='date')" placeholder="Enter birthdate">
-        <small [class.d-none]='birthdate.valid || birthdate.untouched' class="text-danger">birthdate is required</small></td>
-      </tr>
-    </table>
+<alert [class.d-none]=ky></alert>
 
-    <table class="table table-hover table-dark">
-        <tr>
-            <th colspan="3">Employee Projects <br><span (click)='addProject()' class="badge badge-pill badge-warning">Add another Project</span></th>
-        </tr>
-        <tr *ngFor="let idd of idp.controls; let i=index ; let na of namep.controls; let j=index ;  let st of startp.controls; let l=index" >
-          <td formArrayName="idp" scope="row"><input [formControlName] ='i' type="text" name="idp" id="idp" class="form-control" placeholder="Enter id">
-          </td>
-          <td formArrayName="namep" scope="row"><input [formControlName] ='j' type="text" name="namep" id="namep" class="form-control" placeholder="Enter Name">
-          </td>
-          <td formArrayName="startp" scope="row"><input [formControlName] ='l' type="text" name="startp" id="startp" class="form-control" onfocus="(this.type='date')" placeholder="Enter start date">
-          </td>
-        </tr>
-      </table>
+  <div class="container con">
+    <div class="card" id="card">
+      <h3>Add Employee</h3>
+      <form [formGroup]="addEmployeeForm" (ngSubmit)='onSubmit()'>
+        <div>
+          <div class="ti">Employee info:</div>
 
-      <table class="table table-hover table-dark">
-        <tr>
-          <td  colspan="5" class="tdd"><button class="btn btn-outline-success my-2 my-sm-0 btnn" name='submit' id='submit' type="submit">Add</button></td>
-        </tr>
-      </table>
+          <div class="form-group to">
+            <input [class.errr]='name.invalid && name.touched'  formControlName="name" type="text" class="form-control" name="name" id="name" placeholder="Enter Employee Name">
+            <small [class.d-none]='name.valid || name.untouched' class="text-danger">name is required</small>
+          </div>
+
+          <div class="form-group to">
+            <input [class.errr]='salary.invalid && salary.touched'  formControlName="salary" type="text" class="form-control" name="salary" id="salary" placeholder="Enter Employee Salary" required>
+            <small [class.d-none]='salary.valid || salary.untouched' class="text-danger">salary is required</small>
+          </div>
+
+          <div class="form-group to">
+              <select [class.errr]='dev.invalid && dev.touched'  formControlName="dev" name="dev" id="dev">
+                <option value="" disabled selected>Select your option</option>
+                <option value=true class="des">Developer</option>
+                <option value=false class="des">Not Developer</option>
+              </select>
+              <small [class.d-none]='dev.valid || dev.untouched' class="text-danger">please choose one</small>
+          </div>
+
+          <div class="form-group to">
+            <input [class.errr]='birthdate.invalid && birthdate.touched'  formControlName="birthdate" type="text" name="birthdate" id="birthdate" class="form-control"  onfocus="(this.type='date')" placeholder="Enter Employee Birthdate" required>
+            <small [class.d-none]='birthdate.valid || birthdate.untouched' class="text-danger">birthdate is required</small>
+          </div>
+        </div>
+
+        <div>
+          <div class="ti too">Employee Projects: <span (click)='addProject()' class="badge badge-pill badge-warning">Add another Project</span></div>
+          
+          <div class="tat" *ngFor="let idd of idp.controls; let i=index ; let na of namep.controls; let j=index ;  let st of startp.controls; let l=index">
+            
+            <div formArrayName="idp" class="form-group to">
+              <input [formControlName] ='i' type="text" name="idp" id="idp" class="form-control" placeholder="Enter Employee ID" required>
+            </div>
+
+            <div formArrayName="namep" class="form-group to">
+              <input [formControlName] ='j' type="text" name="namep" id="namep" class="form-control" placeholder="Enter Name" required>
+            </div>
+
+            <div formArrayName="startp" class="form-group to">
+              <input [formControlName] ='l' type="text" name="startp" id="startp" class="form-control" onfocus="(this.type='date')" placeholder="Enter start date" required>
+            </div>
+
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary btnn">Add</button>
+      </form>
+    </div>
   </div>
-</form>
