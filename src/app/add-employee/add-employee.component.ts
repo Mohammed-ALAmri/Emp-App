@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,8 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private employeeService: EmployeeService) {}
+  private keyy = true; 
 
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService) {}
   addEmployeeForm = this.fb.group({
     id: ['', Validators.required],
     name: ['', Validators.required],
@@ -23,6 +23,7 @@ export class AddEmployeeComponent implements OnInit {
     namep: this.fb.array(['']),
     startp:this.fb.array([''])
   });
+
 
   ngOnInit() {
 
@@ -42,21 +43,27 @@ export class AddEmployeeComponent implements OnInit {
       isDev = true
     }
 
+    let pro = [];
+    let temp = {};
+    for (let i = 0; i < data.idp.length; i++) {
+      temp = {
+        id: Number(data.idp[i]),
+        name: data.namep[i],
+        startDate: data.startp[i]
+      };
+      pro.push(temp);
+    }
+
     let newEmp = {
       id: data.id,
       name: data.name,
-      salary: data.salary,
+      salary: Number(data.salary),
       birthdate: data.birthdate,
-      isDev: data.dev,
-      projects: [
-        {
-          id: data.idp[0],
-          name: data.namep[0],
-          startDate: data.startp[0]
-        }
-      ]
+      isDev: isDev,
+      projects: pro
     }
     this.employeeService.addEmp(newEmp);
+    this.keyy = false;
   }
 
   get id(){
@@ -89,5 +96,9 @@ export class AddEmployeeComponent implements OnInit {
 
   get startp(){
     return this.addEmployeeForm.get('startp') as FormArray;
+  }
+
+  get ky(){
+    return this.keyy
   }
 }
