@@ -21,7 +21,7 @@ input:focus {
 }
 
 select{
-    width: 100%;
+    width: 98%;
     background-color: #ffffff00;
     color: gray;
     border: none;
@@ -47,8 +47,8 @@ select:focus {
 }
 
 .con{
-    padding-bottom: 0% !important;
-    padding-top: 5% !important;
+    padding-bottom: 5% !important;
+    padding-top: 3% !important;
 }
 
 .table{
@@ -107,11 +107,40 @@ td{
 .badge-warning{
     color: #F2F2F2;
     background-color: #040959;
+    margin-left: 80%;
 }
 
 .badge-warning:hover{
     background-color: #050947;
     border: #050947 solid 1px;
+}
+
+
+.card{
+    padding : 5% 10%;
+    background-color: #F2F2F2;
+    box-shadow: 0 3px #040959;
+    color: #0D0D0D;
+}
+
+h3{
+    padding-bottom: 5%;
+}
+
+.ti{
+    text-align: left;  
+}
+
+.to{
+    margin-left: 17%;
+}
+
+.too{
+    margin-top: 5%
+}
+
+.tat{
+    margin-bottom: 10%;
 }
 
 @media only screen and (max-width: 800px) {
