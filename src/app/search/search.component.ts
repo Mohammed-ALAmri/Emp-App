@@ -1,15 +1,96 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { EmployeeService } from '../employee.service';
+import { HttpClient } from '@angular/common/http';
+import { Employee } from '../employee' ;
+
 
 @Component({
-  selector: 'app-search',
+  selector: 'search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  private employees = [];
+  private searchEmp = [];
+  private idse = false;
+  private nese = false;
+  private prse = false;
+  private url = "http://localhost:5555/employees"
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private employeeService: EmployeeService) { }
+
+  serchIdForm = this.fb.group({
+    id: ['']
+  });
+
+  serchNameForm = this.fb.group({
+    name: ['']
+  });
+
+  serchProjectForm = this.fb.group({
+    project: ['']
+  });
 
   ngOnInit() {
+    this.employeeService.listEmp().subscribe(data => this.employees = data);
   }
 
+  deleteEmp(id){
+    this.http.delete(this.url + `/${id}`).toPromise().then(() => {
+      this.http.get<Employee[]>(this.url).subscribe(data => this.searchEmp = data);
+   })
+  }
+
+  searchId(){
+    let data = this.serchIdForm.value;
+    this.searchEmp = [];
+    this.employees.forEach(e => {
+      if(e.id == data.id){
+        this.searchEmp.push(e);
+      }
+    });
+    console.log(this.searchEmp)
+  }
+
+  searchName(){
+    let data = this.serchNameForm.value;
+    this.searchEmp = [];
+    this.employees.forEach(e => {
+      if(e.name == data.name){
+        this.searchEmp.push(e);
+      }
+    });
+    console.log(this.searchEmp)  
+  }
+
+  searchProj(){
+    let data = this.serchProjectForm.value;
+    this.searchEmp = [];
+    this.employees.forEach(e => {
+      if(e.projects.length >= data.project){
+        this.searchEmp.push(e);
+      }
+    });
+    console.log(this.searchEmp)
+  }
+
+  seid(){
+    this.idse = true;
+    this.nese = false;
+    this.prse = false;
+  }
+
+  sene(){
+    this.nese = true;
+    this.idse = false;
+    this.prse = false;
+  }
+
+  sepr(){
+    this.prse = true;
+    this.nese = false;
+    this.idse = false;
+  }
 }
