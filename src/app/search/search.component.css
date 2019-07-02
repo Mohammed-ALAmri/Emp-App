@@ -26,19 +26,18 @@ select{
 }
 
 .container{
-    padding: 5% 2%;
     padding-top: 0% !important;
     text-align:center;
 }
 
 .con{
-    padding-bottom: 0% !important;
-    padding-top: 5% !important;
+    padding-top: 3% !important;
 }
 
-.table{
-    box-shadow: 0 3px #040959 ;
+.card{
+    padding : 5% 10%;
     background-color: #F2F2F2;
+    box-shadow: 0 3px #040959;
     color: #0D0D0D;
 }
 
@@ -58,32 +57,37 @@ select{
 
 .btnn{
     width: 50%;
+    background-color: #040959;
+    border-color: #040959;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.btnnn{
+    width: 50%;
 }
 
 .butn:hover{
-    background-color: #040959;
+    background-color: #050946;
+    border-color: #050946;
     color: #F2F2F2;
 }
 
-td{
-    width: 20%;
-    vertical-align: middle;
+.to{
+    width: 100%;
+    margin-right: 20%
 }
 
-.tr:hover{
-    background-color: #040959 !important;
+.my-lg-0{
+    margin-right: 5%
 }
 
-.tdId{
-    width: 10%;
-}
-
-.ccc{
-    padding-left: 20% ;    
-}
-
-.pagination1:hover{
-    color: #0D0D0D !important;
+.table{
+    box-shadow: 0 3px #040959 ;
+    background-color: #F2F2F2;
+    color: #0D0D0D;
+    border-radius:5px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -98,14 +102,5 @@ td{
         width: 70%;
         margin: auto;
         margin-left: 20px;
-    }
-
-    table{
-        font-size: 15px;
-    }
-
-    .btnn{
-        font-size: 13px;
-        width: 90%;
     }
 }
