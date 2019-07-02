@@ -7,16 +7,16 @@
       <h3>Add Employee</h3>
       <form [formGroup]="addEmployeeForm" (ngSubmit)='onSubmit()'>
         <div>
-          <div class="ti">Employee info:</div>
+          <div class="ti">Employee Info:</div>
 
           <div class="form-group to">
             <input [class.errr]='name.invalid && name.touched'  formControlName="name" type="text" class="form-control" name="name" id="name" placeholder="Enter Employee Name">
-            <small [class.d-none]='name.valid || name.untouched' class="text-danger">name is required</small>
+            <small [class.d-none]='name.valid || name.untouched' class="text-danger"> Employee's Name is required</small>
           </div>
 
           <div class="form-group to">
-            <input [class.errr]='salary.invalid && salary.touched'  formControlName="salary" type="text" class="form-control" name="salary" id="salary" placeholder="Enter Employee Salary" required>
-            <small [class.d-none]='salary.valid || salary.untouched' class="text-danger">salary is required</small>
+            <input [class.errr]='salary.invalid && salary.touched'  formControlName="salary" type="number" class="form-control" name="salary" id="salary" placeholder="Enter Employee Salary" required>
+            <small [class.d-none]='salary.valid || salary.untouched' class="text-danger"> Employee's Salary is required</small>
           </div>
 
           <div class="form-group to">
@@ -25,12 +25,12 @@
                 <option value=true class="des">Developer</option>
                 <option value=false class="des">Not Developer</option>
               </select>
-              <small [class.d-none]='dev.valid || dev.untouched' class="text-danger">please choose one</small>
+              <small [class.d-none]='dev.valid || dev.untouched' class="text-danger">Please choose one</small>
           </div>
 
           <div class="form-group to">
             <input [class.errr]='birthdate.invalid && birthdate.touched'  formControlName="birthdate" type="text" name="birthdate" id="birthdate" class="form-control"  onfocus="(this.type='date')" placeholder="Enter Employee Birthdate" required>
-            <small [class.d-none]='birthdate.valid || birthdate.untouched' class="text-danger">birthdate is required</small>
+            <small [class.d-none]='birthdate.valid || birthdate.untouched' class="text-danger"> Employee's Birthdate is required</small>
           </div>
         </div>
 
@@ -40,21 +40,21 @@
           <div class="tat" *ngFor="let idd of idp.controls; let i=index ; let na of namep.controls; let j=index ;  let st of startp.controls; let l=index">
             
             <div formArrayName="idp" class="form-group to">
-              <input [formControlName] ='i' type="text" name="idp" id="idp" class="form-control" placeholder="Enter Employee ID" required>
+              <input [formControlName] ='i' type="number" name="idp" id="idp" class="form-control" placeholder="Enter Project ID" required>
             </div>
 
             <div formArrayName="namep" class="form-group to">
-              <input [formControlName] ='j' type="text" name="namep" id="namep" class="form-control" placeholder="Enter Name" required>
+              <input [formControlName] ='j' type="text" name="namep" id="namep" class="form-control" placeholder="Enter Project Name" required>
             </div>
 
             <div formArrayName="startp" class="form-group to">
-              <input [formControlName] ='l' type="text" name="startp" id="startp" class="form-control" onfocus="(this.type='date')" placeholder="Enter start date" required>
+              <input [formControlName] ='l' type="text" name="startp" id="startp" class="form-control" onfocus="(this.type='date')" placeholder="Enter Project Start Date" required>
             </div>
 
           </div>
 
         </div>
-        <button type="submit" class="btn btn-primary btnn">Add</button>
+        <button [disabled]='name.invalid || salary.invalid || birthdate.invalid || dev.invalid' type="submit" class="btn btn-primary btnn">Add</button>
       </form>
     </div>
   </div>
