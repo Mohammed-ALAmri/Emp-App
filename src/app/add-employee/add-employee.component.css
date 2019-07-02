@@ -104,15 +104,15 @@ td{
     color: #0D0D0D !important;
 }
 
-.badge-warning{
-    color: #F2F2F2;
-    background-color: #040959;
+.btn-outline-primary{
+    color: #040959;
     margin-left: 80%;
+    border: #040959 solid 1px;
 }
 
-.badge-warning:hover{
-    background-color: #050947;
-    border: #050947 solid 1px;
+.btn-outline-primary:hover{
+    color: #F2F2F2;
+    background-color: #040959;
 }
 
 
