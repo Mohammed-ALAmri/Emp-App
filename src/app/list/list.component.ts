@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from '../employee' ; 
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'list',
