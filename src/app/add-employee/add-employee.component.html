@@ -35,7 +35,10 @@
         </div>
 
         <div>
-          <div class="ti too">Employee Projects: <span (click)='addProject()' class="badge badge-pill badge-warning">Add another Project</span></div>
+          <div class="ti too">
+            Employee Projects: 
+            <button (click)='addProject()' type="button" class="btn btn-outline-primary btn-sm">Add another Project</button>
+          </div>
           
           <div class="tat" *ngFor="let idd of idp.controls; let i=index ; let na of namep.controls; let j=index ;  let st of startp.controls; let l=index">
             
