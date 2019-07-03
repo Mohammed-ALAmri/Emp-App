@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ListComponent } from './list/list.component';
 import { SearchComponent } from './search/search.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { ChartsComponent } from './charts/charts.component'
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: "searchEmployee" ,
     component: SearchComponent
+  },
+  {
+    path: "charts" ,
+    component: ChartsComponent
   },
   {
     path: "**" ,
