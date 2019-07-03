@@ -15,6 +15,8 @@ import { AlertComponent } from './alert/alert.component';
 import { SearchComponent } from './search/search.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+import { ChartsComponent } from './charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PageNotFoundComponent,
     ListComponent,  
-    JwPaginationComponent, AlertComponent, SearchComponent, AddEmployeeComponent
+    JwPaginationComponent, AlertComponent, SearchComponent, AddEmployeeComponent, ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
