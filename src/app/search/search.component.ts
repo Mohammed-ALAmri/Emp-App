@@ -35,7 +35,7 @@ export class SearchComponent implements OnInit {
   });
 
   ngOnInit() {
-    this.employeeService.listEmp().subscribe(data => this.employees = data);
+    this.employeeService.listEmp().subscribe(data => this.employees = data)
   }
 
   deleteEmp(id){
