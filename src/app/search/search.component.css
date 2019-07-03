@@ -26,12 +26,8 @@ select{
 }
 
 .container{
-    padding-top: 0% !important;
+    padding-top: 3% ;
     text-align:center;
-}
-
-.con{
-    padding-top: 3% !important;
 }
 
 .card{
@@ -93,19 +89,4 @@ select{
     background-color: #F2F2F2;
     color: #0D0D0D;
     border-radius:5px;
-}
-
-@media only screen and (max-width: 800px) {
-    .butn{
-        font-size: 15px;
-        width: 20%;
-        height: 35px;
-        margin: auto;
-    }
-
-    .search {
-        width: 70%;
-        margin: auto;
-        margin-left: 20px;
-    }
 }
