@@ -10,13 +10,3 @@
     color: #040959;
     font-weight: bold;
 }
-
-@media only screen and (max-width: 800px) {
-    .jumbotron{
-        margin-top: 50%;
-    }
-
-    h1{
-        font-size: 200%
-    }
-}
