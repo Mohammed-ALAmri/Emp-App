@@ -1,0 +1,53 @@
+<navbar></navbar>
+
+<div class="container">
+  <div class="card" id="card">
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-primary btnn ">
+        <input (click)='sbar()' type="radio" name="options" id="option1" autocomplete="off" >Bar Chart
+      </label>
+      <label class="btn btn-primary btnn">
+        <input (click)='sdoughnut()' type="radio" name="options" id="option2" autocomplete="off">Doughnut Chart
+      </label>
+      <label class="btn btn-primary btnn">
+        <input (click)='spie()' type="radio" name="options" id="option3" autocomplete="off">Radar Chart
+      </label>
+      <label class="btn btn-primary btnn">
+        <input (click)='sradar()' type="radio" name="options" id="option3" autocomplete="off">Pie Chart
+      </label>
+    </div>
+
+    <div [class.d-none]='bar' style="display: block">
+      <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+      </canvas>
+    </div>
+
+    <div [class.d-none]='doughnut' style="display: block">
+      <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"></canvas>
+    </div>
+
+    <div [class.d-none]='pie' style="display: block">
+      <canvas baseChart
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"></canvas>
+    </div>
+
+    <div [class.d-none]='radar' style="display: block">
+      <canvas baseChart
+              [datasets]="radarChartData"
+              [labels]="radarChartLabels"
+              [chartType]="radarChartType"></canvas>
+    </div>
+
+  </div>
+</div>
