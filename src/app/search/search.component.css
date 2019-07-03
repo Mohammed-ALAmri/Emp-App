@@ -64,6 +64,11 @@ select{
     margin-bottom: 5%;
 }
 
+.btnn:hover{
+    background-color: #020633;
+    border-color: #020633;
+}
+
 .btnnn{
     width: 50%;
 }
