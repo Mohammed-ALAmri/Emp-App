@@ -41,6 +41,7 @@ export class ChartsComponent implements OnInit {
   private radarChartType = 'radar';
 
 
+  
   private bar = false;
   private doughnut = true;
   private pie = true;
