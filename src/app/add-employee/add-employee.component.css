@@ -42,31 +42,8 @@ select:focus {
 
 .container{
     padding: 5% 2%;
-    padding-top: 0% !important;
+    padding-top: 3%;
     text-align:center;
-}
-
-.con{
-    padding-bottom: 5% !important;
-    padding-top: 3% !important;
-}
-
-.table{
-    box-shadow: 0 3px #040959 ;
-    background-color: #F2F2F2;
-    color: #0D0D0D;
-}
-
-.search {
-    width: 70%;
-    margin: auto;
-    margin-left: 80px;
-}
-
-.butn{
-    width: 13%;
-    margin: auto;
-    margin-left: 1px;
 }
 
 .btnn{
@@ -83,26 +60,6 @@ select:focus {
     color: white;
 }
 
-td{
-    width: 20%;
-    vertical-align: middle;
-}
-
-.tr:hover{
-    background-color: #040959 !important;
-}
-
-.tdId{
-    width: 10%;
-}
-
-.ccc{
-    padding-left: 20% ;    
-}
-
-.pagination1:hover{
-    color: #0D0D0D !important;
-}
 
 .btn-outline-primary{
     color: #040959;
@@ -144,25 +101,5 @@ h3{
 }
 
 @media only screen and (max-width: 800px) {
-    .butn{
-        font-size: 15px;
-        width: 20%;
-        height: 35px;
-        margin: auto;
-    }
-
-    .search {
-        width: 70%;
-        margin: auto;
-        margin-left: 20px;
-    }
-
-    table{
-        font-size: 15px;
-    }
-
-    .btnn{
-        font-size: 13px;
-        width: 90%;
-    }
+   
 }
