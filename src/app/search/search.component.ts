@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   private idse = false;
   private nese = false;
   private prse = false;
+  private noShow = false;
   private url = "http://localhost:5555/employees"
 
   constructor(private fb: FormBuilder, private http: HttpClient, private employeeService: EmployeeService) { }
@@ -51,18 +52,29 @@ export class SearchComponent implements OnInit {
         this.searchEmp.push(e);
       }
     });
-    console.log(this.searchEmp)
+    if(this.searchEmp.length > 0){
+      this.noShow = true;
+    }
+    else{
+      this.noShow = false;
+    }
   }
 
   searchName(){
     let data = this.serchNameForm.value;
+    let res = data.name.toLowerCase()
     this.searchEmp = [];
     this.employees.forEach(e => {
-      if(e.name == data.name){
+      if(e.name.toLowerCase().includes(res)){
         this.searchEmp.push(e);
       }
     });
-    console.log(this.searchEmp)  
+    if(this.searchEmp.length > 0){
+      this.noShow = true;
+    }
+    else{
+      this.noShow = false;
+    }
   }
 
   searchProj(){
@@ -73,8 +85,13 @@ export class SearchComponent implements OnInit {
         this.searchEmp.push(e);
       }
     });
-    console.log(this.searchEmp)
-  }
+    if(this.searchEmp.length > 0){
+      this.noShow = true;
+    }
+    else{
+      this.noShow = false;
+    }
+}
 
   seid(){
     this.idse = true;
