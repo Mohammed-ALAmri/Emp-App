@@ -1,8 +1,8 @@
 .jumbotron{
-    margin-top: 7%;
-    background-color: #343a40;
-    color: aliceblue;
-    box-shadow: 0 3px #4dffff ;
+    margin-top: 10%;
+    background-color: #F2F2F2;
+    color: #0D0D0D;
+    box-shadow: 0 3px #040959 ;
 }
 
 h1{
@@ -11,18 +11,4 @@ h1{
 
 p{
     font-size: 300%
-}
-
-@media only screen and (max-width: 800px) {
-    .jumbotron{
-        margin-top: 50%;
-    }
-
-    h1{
-        font-size: 500%
-    }
-    
-    p{
-        font-size: 150%
-    }
 }
