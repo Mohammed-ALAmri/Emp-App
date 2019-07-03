@@ -1,12 +1,7 @@
 .container{
     padding: 5% 2%;
-    padding-top: 0% !important;
+    padding-top: 5%;
     text-align:center;
-}
-
-.con{
-    padding-bottom: 0% !important;
-    padding-top: 5% !important;
 }
 
 .table{
@@ -15,18 +10,6 @@
     color: #0D0D0D;
     border-radius:5px;
     border-top: none;
-}
-
-.search {
-    width: 70%;
-    margin: auto;
-    margin-left: 80px;
-}
-
-.butn{
-    width: 13%;
-    margin: auto;
-    margin-left: 1px;
 }
 
 .btnn{
@@ -39,42 +22,14 @@ td{
 }
 
 .tr:hover{
-    background-color: #040959 !important;
+    background-color: #040a59be !important;
     color: #F2F2F2;
 }
 
 .tdId{
-    width: 10%;
+    width: 5%;
 }
 
-.ccc{
-    padding-left: 20% ;    
-}
-
-.pagination1:hover{
-    color: #0D0D0D !important;
-}
-
-@media only screen and (max-width: 800px) {
-    .butn{
-        font-size: 15px;
-        width: 20%;
-        height: 35px;
-        margin: auto;
-    }
-
-    .search {
-        width: 70%;
-        margin: auto;
-        margin-left: 20px;
-    }
-
-    table{
-        font-size: 15px;
-    }
-
-    .btnn{
-        font-size: 13px;
-        width: 90%;
-    }
+.pagi{
+    display: inline-block;
 }
