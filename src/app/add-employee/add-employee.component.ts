@@ -45,13 +45,15 @@ export class AddEmployeeComponent implements OnInit {
 
     let pro = [];
     let temp = {};
-    for (let i = 0; i < data.idp.length; i++) {
-      temp = {
-        id: Number(data.idp[i]),
-        name: data.namep[i],
-        startDate: data.startp[i]
-      };
-      pro.push(temp);
+    if(data.namep !== "" || data.idp !== 0 ){
+      for (let i = 0; i < data.idp.length; i++) {
+        temp = {
+          id: Number(data.idp[i]),
+          name: data.namep[i],
+          startDate: data.startp[i]
+        };
+        pro.push(temp);
+      }
     }
 
     let newEmp = {
