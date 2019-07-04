@@ -90,3 +90,8 @@ select{
     color: #0D0D0D;
     border-radius:5px;
 }
+
+.ttr:hover{
+    background-color: #040a59be !important;
+    color: #F2F2F2 !important;
+}
