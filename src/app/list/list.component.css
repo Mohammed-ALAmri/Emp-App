@@ -32,4 +32,5 @@ td{
 
 .pagi{
     display: inline-block;
+    vertical-align: middle;
 }
