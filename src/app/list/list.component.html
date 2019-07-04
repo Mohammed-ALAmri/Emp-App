@@ -20,11 +20,9 @@
         <td class="tdd"><button class="btn btn-outline-danger my-2 my-sm-0 btnn" type="submit" (click)="deleteEmp(employee.id)">Delete</button></td>
       </tr>
       
-      <tr class="pagination1">
+      <tr>
         <td colspan="5">    
-          <div class="pagi">
-              <jw-pagination [items]="employees" (changePage)="onChangePage($event)"></jw-pagination>
-          </div>
+          <jw-pagination class="pagi" [items]="employees" (changePage)="onChangePage($event)"></jw-pagination>
         </td>
       </tr>
     </tbody>
