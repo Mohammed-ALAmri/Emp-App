@@ -53,12 +53,12 @@
       </thead>
       <tbody>
         
-        <tr *ngFor='let employee of searchEmp' class="tr">
-          <th class="tdId" scope="row">{{employee.id}}</th>
-          <td>{{employee.name}}</td>
-          <td>{{employee.salary}}</td>
-          <td class="tdd"><button class="btn btn-outline-danger my-2 my-sm-0 btnnn" type="submit" (click)="deleteEmp(employee.id)">Delete</button></td>
-        </tr>
+      <tr *ngFor='let employee of searchEmp' class="ttr">
+        <th class="tdId" scope="row">{{employee.id}}</th>
+        <td>{{employee.name}}</td>
+        <td>{{employee.salary}}</td>
+        <td class="tdd"><button class="btn btn-outline-danger my-2 my-sm-0 btnnn" type="submit" (click)="deleteEmp(employee.id)">Delete</button></td>
+      </tr>
 
       </tbody>
     </table>
