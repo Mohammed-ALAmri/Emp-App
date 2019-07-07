@@ -1,26 +1,22 @@
 <div class="container">
   <div class="card">
     <h3>Register</h3>
-    <form (submit)=registerUser($event)>
+    <form [formGroup]="addAdminForm" (ngSubmit)=registerUser()>
       <div class="form-group">
-        <label for="first">First Name</label>
-        <input type="text" class="form-control" id="first" placeholder="Enter your first name" required >
+        <label for="name">Full Name</label>
+        <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter your full name" required >
       </div>
       <div class="form-group">
-        <label for="last">Last Name</label>
-        <input type="text" class="form-control" id="last" placeholder="Enter your last name" required >
+        <label for="phone">Phone number</label>
+        <input formControlName="phone" pattern="(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})" title="Enter a valid phone number" type="text" class="form-control" id="phone" placeholder="Enter phone number" required >
       </div>
       <div class="form-group">
-        <label for="phoneNumber">Phone number</label>
-        <input pattern="(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})" title="Enter a valid phone number" type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number" required >
+        <label for="password">Password</label>
+        <input formControlName="password" type="password" minlength="6" class="form-control" id="password" placeholder="Enter Password" required >
       </div>
       <div class="form-group">
-        <label for="Password">Password</label>
-        <input type="password" minlength="6" class="form-control" id="Password" placeholder="Enter Password" required >
-      </div>
-      <div class="form-group">
-        <label for="Password2">Re-Enter Password</label>
-        <input type="password" minlength="6" class="form-control" id="Password2" placeholder="Re-Enter Password" required >
+        <label for="rePassword">Re-Enter Password</label>
+        <input formControlName="rePassword"type="password" minlength="6" class="form-control" id="rePassword" placeholder="Re-Enter Password" required >
       </div>
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
