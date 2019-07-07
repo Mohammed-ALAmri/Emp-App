@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../services/employee.service';
 import { HttpClient } from '@angular/common/http';
-import { Employee } from '../employee' ;
-
+import { Employee } from '../interfaces/employee' ;
 
 @Component({
   selector: 'search',
