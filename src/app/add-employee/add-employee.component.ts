@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
-import { EmployeeService } from '../employee.service';
-
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -13,6 +12,7 @@ export class AddEmployeeComponent implements OnInit {
   private keyy = true; 
 
   constructor(private fb: FormBuilder, private employeeService: EmployeeService) {}
+  
   addEmployeeForm = this.fb.group({
     id: ['', Validators.required],
     name: ['', Validators.required],
@@ -23,7 +23,6 @@ export class AddEmployeeComponent implements OnInit {
     namep: this.fb.array(['']),
     startp:this.fb.array([''])
   });
-
 
   ngOnInit() {
 
