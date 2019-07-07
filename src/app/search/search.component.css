@@ -92,6 +92,6 @@ select{
 }
 
 .ttr:hover{
-    background-color: #040a59be !important;
-    color: #F2F2F2 !important;
+    background-color: #040a59be;
+    color: #F2F2F2;
 }
