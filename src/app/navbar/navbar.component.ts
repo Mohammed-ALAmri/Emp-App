@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../services/admin.service'
 
 @Component({
   selector: 'navbar',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  // private flag = false;
+  constructor(private adminService: AdminService) { }
 
   ngOnInit() {
   }
 
+  get flag(){
+    return this.adminService.getFlag();
+  }
 }
