@@ -8,33 +8,16 @@ import {Observable} from 'rxjs';
 })
 export class AdminService {
 
-  private url = "http://localhost:5555/admin"
-  private flag = false;
+  private register_url ="http://localhost:3000/api/register" 
+  private login_url ="http://localhost:3000/api/login" 
 
   constructor(private http: HttpClient) { }
 
-  addAdmin(newAdmin: object){
-    this.http.post(this.url, newAdmin).subscribe();
+  registerAdmin(newAdmin: object){
+    return this.http.post<any>(this.register_url, newAdmin);
   }
 
-  getAdmin(): Observable <Admin[]>{
-    return this.http.get<Admin[]>(this.url);
-  }
-
-  logInUser(d){
-    let admin = []
-    this.getAdmin().subscribe(data =>{
-      admin = data ; 
-      admin.forEach(element => {
-        if(element.phone === d.phone && element.password === d.password){
-          console.log('loging In...')
-          this.flag = true;
-        }
-      })
-    })
-  }
-
-  getFlag(){
-    return this.flag
+  loginAdmin(admin){
+    return this.http.post<any>(this.login_url, admin);
   }
 }
