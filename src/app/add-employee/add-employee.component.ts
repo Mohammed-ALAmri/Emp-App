@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-add-employee',
@@ -11,7 +12,7 @@ export class AddEmployeeComponent implements OnInit {
 
   private keyy = true; 
 
-  constructor(private fb: FormBuilder, private employeeService: EmployeeService) {}
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService, private router: Router) {}
   
   addEmployeeForm = this.fb.group({
     id: ['', Validators.required],
@@ -65,6 +66,7 @@ export class AddEmployeeComponent implements OnInit {
     }
     this.employeeService.addEmp(newEmp);
     this.keyy = false;
+    setTimeout(() => {this.router.navigate(['/employeelist'])}, 1000);
   }
 
   get id(){
