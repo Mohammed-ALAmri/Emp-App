@@ -11,8 +11,6 @@ import { AdminService } from '../services/admin.service';
 })
 export class RegisterFormComponent implements OnInit {
 
-  private admin =[]
-
   constructor(private fb: FormBuilder, private adminService: AdminService) { }
 
   addAdminForm = this.fb.group({
@@ -24,34 +22,26 @@ export class RegisterFormComponent implements OnInit {
   });
 
   ngOnInit() {
-    this.adminService.getAdmin().subscribe(data => this.admin = data)
   }
 
   registerUser(){
+    
     let data = this.addAdminForm.value;
     let newAdmin = {}
-    let flag = false;
-    this.admin.forEach(element => {
-      if(element.phone === data.phone){
-        flag = true;
-      }
-    });
-    if(flag){
-      console.log('Same Name')
-    }else{
-      if(data.password === data.rePassword){
-        newAdmin = {
-          id: data.id,
-          name: data.name,
-          phone : data.phone,
-          password: data.password
-        }
-        this.adminService.addAdmin(newAdmin);
-      }
-      else{
-        console.log("Not equal pass")
-      }
-    }
 
+    if(data.password === data.rePassword){
+      newAdmin = {
+        id: data.id,
+        name: data.name,
+        phone : data.phone,
+        password: data.password
+      }
+      this.adminService.registerAdmin(newAdmin).subscribe(
+        res => console.log(res),
+        err => console.log(err))
+    }
+    else{
+      console.log("Not equal pass")
+    }
   }
-}
+} 
