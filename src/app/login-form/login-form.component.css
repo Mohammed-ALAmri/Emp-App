@@ -33,3 +33,16 @@ input:focus {
     box-shadow: none;
     border-bottom: #040959 2px solid
 }
+
+.errr{
+    background-color: rgba(158, 0, 0, 0.11);
+    border-bottom: #960000 2px solid;
+}
+
+.text-danger{
+    color: #960000 !important;
+}
+
+.mysmall{
+    padding-bottom: 5%;
+}
