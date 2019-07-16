@@ -1,24 +1,35 @@
+<navbar></navbar>
 <div class="container">
   <div class="card">
     <h3>Register</h3>
+
     <form [formGroup]="addAdminForm" (ngSubmit)=registerUser()>
       <div class="form-group">
         <label for="name">Full Name</label>
-        <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter your full name" required >
+        <input [class.errr]='name.invalid && name.touched' formControlName="name" type="text" class="form-control" id="name" placeholder="Enter your full name">
+        <small [class.d-none]='name.valid || name.untouched' class="text-danger">Name is required, minimum length is 3 characters</small>
+
       </div>
       <div class="form-group">
         <label for="phone">Phone number</label>
-        <input formControlName="phone" pattern="(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})" title="Enter a valid phone number" type="text" class="form-control" id="phone" placeholder="Enter phone number" required >
+        <input [class.errr]='phone.invalid && phone.touched' formControlName="phone" type="text" class="form-control" id="phone" placeholder="Enter phone number">
+        <small [class.d-none]='phone.valid || phone.untouched' class="text-danger">Valid Phone number is required</small>
+        <small [class.d-none]='phoneFlag' class="text-danger">Phone number does exist</small>
+
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input formControlName="password" type="password" minlength="6" class="form-control" id="password" placeholder="Enter Password" required >
+        <input [class.errr]='password.invalid && password.touched' formControlName="password" type="password" class="form-control" id="password" placeholder="Enter Password">
+        <small [class.d-none]='password.valid || password.untouched' class="text-danger">Password is required, minimum length is 6 characters</small>
+
       </div>
       <div class="form-group">
         <label for="rePassword">Re-Enter Password</label>
-        <input formControlName="rePassword"type="password" minlength="6" class="form-control" id="rePassword" placeholder="Re-Enter Password" required >
+        <input [class.errr]='rePassword.invalid && rePassword.touched' formControlName="rePassword"type="password" class="form-control" id="rePassword" placeholder="Re-Enter Password">
+        <small [class.d-none]='rePassword.valid || rePassword.untouched' class="text-danger">Password is required, minimum length is 6 characters</small>
+        <small [class.d-none]='passFlag' class="text-danger">Passwords does not match</small>
       </div>
-      <button type="submit" class="btn btn-primary">Register</button>
+      <button [disabled]='name.invalid || phone.invalid || password.invalid || rePassword.invalid' type="submit" class="btn btn-primary">Register</button>
     </form>
   </div>
 </div>
