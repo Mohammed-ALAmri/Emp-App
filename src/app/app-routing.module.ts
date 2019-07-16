@@ -10,6 +10,8 @@ import { SearchComponent } from './search/search.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ChartsComponent } from './charts/charts.component'
 
+import { AdminGuard } from './services/admin.guard'
+
 const routes: Routes = [
   {
     path: "" ,
@@ -30,19 +32,26 @@ const routes: Routes = [
   },
   {
     path: "employeelist" ,
-    component: ListComponent
+    component: ListComponent,
+    canActivate: [AdminGuard]
   },  
   {
     path: "addemployee" ,
-    component: AddEmployeeComponent
+    component: AddEmployeeComponent,
+    canActivate: [AdminGuard]
+
   },  
   {
     path: "search" ,
-    component: SearchComponent
+    component: SearchComponent,
+    canActivate: [AdminGuard]
+
   },
   {
     path: "charts" ,
-    component: ChartsComponent
+    component: ChartsComponent,
+    canActivate: [AdminGuard]
+
   },
   {
     path: "**" ,
