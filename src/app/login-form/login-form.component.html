@@ -2,16 +2,19 @@
 <div class="container">
   <div class="card" id="card">
     <h3>Login</h3>
+    <small [class.d-none]='phoneFlag' class="text-danger mysmall">Phone number or Password is not valid</small>
     <form [formGroup]="logInAdminForm" (ngSubmit)=logInUser()>
         <div class="form-group">
           <label for="phone">Phone number</label>
-          <input formControlName="phone" pattern="(009665|9665|\+9665|05|5)(0|3|4|5|6|7|8|9)([0-9]{7})" title="Enter a valid phone number" type="text" class="form-control" id="phone" placeholder="Enter phone number" required>
+          <input [class.errr]='phone.invalid && phone.touched' formControlName="phone"type="text" class="form-control" id="phone" placeholder="Enter phone number">
+          <small [class.d-none]='phone.valid || phone.untouched' class="text-danger">Valid Phone number is required</small>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input formControlName="password" minlength="6" type="password" class="form-control" id="password" placeholder="Enter Password" required>
+          <input [class.errr]='password.invalid && password.touched' formControlName="password" type="password" class="form-control" id="password" placeholder="Enter Password">
+          <small [class.d-none]='password.valid || password.untouched' class="text-danger">Password is required</small>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button [disabled]='phone.invalid || password.invalid' type="submit" class="btn btn-primary">Login</button>
     </form>
   </div>
 </div>
