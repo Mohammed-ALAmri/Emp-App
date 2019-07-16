@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 
@@ -20,6 +20,8 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ChartsComponent } from './charts/charts.component';
 
 import { AdminService } from "./services/admin.service";
+import { AdminGuard } from './services/admin.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service'
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -48,7 +50,15 @@ export function tokenGetter() {
     ReactiveFormsModule,
     ChartsModule
   ],
-  providers: [AdminService],
+  providers: [
+    AdminService, 
+    AdminGuard, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
